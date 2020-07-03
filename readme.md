@@ -1,5 +1,5 @@
 <h2>Indian Banks API</h2><br>
-<p>Here you can get data of any bank in india by query IFSC Code Or City and Bank Name</p><br><br>
+<p>Here you can get data of any bank of india by query IFSC Code Or City and Bank Name</p><br><br>
 <a href="https://indianbankslist.herokuapp.com">Click me for Go on Live Site</a><br><br> 
 
 
