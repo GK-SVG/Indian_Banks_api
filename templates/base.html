@@ -66,6 +66,9 @@
          const xhr = new XMLHttpRequest()
          xhr.open(method, url)
          xhr.send(myFormData)
+         xhr.onload=function(){
+             myForm.reset()
+         }
      }
     </script>
 </body>
