@@ -33,28 +33,41 @@
     </nav>
     <div class="container">
         <h2 class="center-align">Search Indian Bank Deatils</h2>
-        <form action="{% url 'search_ifsc'%}" method="get" style="margin-top:30px;">
-            <input type="text" name="ifsc" placeholder="Enter Bank IFSC Code">
+        <form id="ifsc" action="search_ifsc" method="get" style="margin-top:30px;">
+            <input type="text" name="ifsc" placeholder="Enter Bank IFSC Code (IFSC Code Should we valid)">
             <button class="btn waves-effect waves-light" type="submit">Search
                 <i class="material-icons right">send</i>
             </button>
         </form><br>
         <p class="center-align">OR</p><hr style="margin:o auto; width:10%;">
-         <form action="{% url 'search_dist'%}" method="get">
-            <input type="text" name="city" placeholder="Enter City Name">
-            <input type="text" name="bank" placeholder="Enter Bank Name">
+         <form id="citybank" action="searchDist" method="get">
+            <input type="text" name="city" placeholder="Enter City Name (City Name Should we valid)">
+            <input type="text" name="bank" placeholder="Enter Bank Name (Bank Name Should we valid)">
             <button class="btn waves-effect waves-light" type="submit">Search
                 <i class="material-icons right">send</i>
             </button>
         </form>
     </div>
-
-
     {% block content %}
 
     {% endblock content %}
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+     const citybank=document.getElementById('citybank')
+     const ifsc=document.getElementById('ifsc')
+     ifsc.addEventListener('submit',getCityBanks)
+     citybank.addEventListener('submit',getCityBanks)
+     function getCityBanks(event){
+         const myForm=event.target
+         const myFormData = new FormData(myForm)
+         const url = myForm.getAttribute("action")
+         const method = myForm.getAttribute("method")
+         const xhr = new XMLHttpRequest()
+         xhr.open(method, url)
+         xhr.send(myFormData)
+     }
+    </script>
 </body>
 
 </html>
