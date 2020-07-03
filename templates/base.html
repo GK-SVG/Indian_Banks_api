@@ -56,9 +56,9 @@
     <script>
      const citybank=document.getElementById('citybank')
      const ifsc=document.getElementById('ifsc')
-     ifsc.addEventListener('submit',getCityBanks)
-     citybank.addEventListener('submit',getCityBanks)
-     function getCityBanks(event){
+     ifsc.addEventListener('submit',getBanks)
+     citybank.addEventListener('submit',getBanks)
+     function getBanks(event){
          const myForm=event.target
          const myFormData = new FormData(myForm)
          const url = myForm.getAttribute("action")

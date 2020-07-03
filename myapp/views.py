@@ -13,7 +13,7 @@ def search_ifsc(request):
     ifsc=request.GET.get('ifsc')
     banks=BankDetail.objects.filter(ifsc=ifsc)
     serializer=BankSerializer(banks,many=True)
-    return Response(serializer.data,status=200)
+    return JsonResponse(serializer.data,status=200,safe=False)
 
 
 @api_view(['GET'])
@@ -22,4 +22,4 @@ def search_dist(request):
     bank=request.GET.get('bank')
     banks=BankDetail.objects.filter(city=city.upper(),bank_name=bank.upper())
     serializer=BankSerializer(banks,many=True)
-    return Response(serializer.data,status=200)
+    return JsonResponse(serializer.data,status=200,safe=False)
