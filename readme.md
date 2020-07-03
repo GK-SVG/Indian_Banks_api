@@ -3,16 +3,16 @@
 <p><b>Search banks by IFSC Code</b></p>
 <img src="static/images/1st.png">
 <p><b>Search Results of Ifsc Code</b></p>
-<img src="static/images/2st.png">
+<img src="static/images/2nd.png">
 
 <p><b>Search banks by City and Bank-name</b></p>
-<img src="static/images/3st.png">
+<img src="static/images/3rd.png">
 <p><b>Search Results</b></p>
-<img src="static/images/4st.png">
+<img src="static/images/4th.png">
 
 <p><b>You can directly see the list of all Banks in india</b></p>
-<img src="static/images/5st.png">
+<img src="static/images/5th.png">
 <p><b>You can Here also Search banks by IFSC code or City and Bank-name</b></p>
-<img src="static/images/6st.png">
+<img src="static/images/6th.png">
 <p><b>Search Results</b></p>
-<img src="static/images/7st.png">
+<img src="static/images/7th.png">
