@@ -10,7 +10,7 @@
 <p><b>Search Results</b></p>
 <img src="static/images/4th.png">
 
-<p><b>You can directly see the list of all Banks in india</b></p>
+<p><b>You can directly see the list of all Banks in india on /api/ url</b></p>
 <img src="static/images/5th.png">
 <p><b>You can Here also Search banks by IFSC code or City and Bank-name</b></p>
 <img src="static/images/6th.png">
