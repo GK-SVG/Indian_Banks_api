@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'myapp',
     'rest_framework',
     'django_extensions',
+    'algebraAPI',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'), )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_URL = '/images/'
