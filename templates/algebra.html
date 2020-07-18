@@ -39,6 +39,19 @@
             </button>
         </form><br>
     </div>
+    <div class="col-md-12 center-align">
+        <h2>For the testing Purpose You can search These</h2>
+        <ul style="font-size: 2.5em;">
+            <li>
+                (a+b)^2
+                <hr>
+            </li>
+            <li>
+                (2x-1)(5x-6)
+                <hr>
+            </li>
+        </ul>
+    </div>
     {% block content %}
 
     {% endblock content %}
@@ -59,19 +72,6 @@
              myForm.reset()
          }
      }
-
-     {% comment %} function allAns(){
-         const url = 'api'
-         const method='get'
-         const xhr = new XMLHttpRequest()
-         xhr.open(method, url)
-         xhr.send()
-         xhr.onload= function(){
-            let obj = JSON.parse(this.responseText);
-            console.log(obj);
-         }
-     }
-     allAns() {% endcomment %}
     </script>
 </body>
 
