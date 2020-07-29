@@ -8,6 +8,7 @@ urlpatterns = [
     path('',include('myapp.urls')),
     path('api/',include('myapp.api.urls')),
     path('algebra/',include('algebraAPI.urls')),
-    path('algebraApi/',include('algebraAPI.api.urls')),    
+    path('algebraApi/',include('algebraAPI.api.urls')),
+    path('personApi/',include('person.api.urls')),  
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
