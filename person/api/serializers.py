@@ -11,22 +11,28 @@ class PersonSerializer(ModelSerializer):
         model=Person
         fields='__all__'
 
-class CountrySerializer(ModelSerializer):
+class TownSerializer(ModelSerializer):
     class Meta:
-        model=Country
-        fields='__all__'
-
-class StateSerializer(ModelSerializer):
-    class Meta:
-        model=State
-        fields='__all__'
+        model=Town
+        fields=['town','description','population','gdp','pincode']
 
 class CitySerializer(ModelSerializer):
     class Meta:
         model=City
-        fields='__all__'
+        fields=['city','description','population','gdp','pincode']
 
-class TownSerializer(ModelSerializer):
+class StateSerializer(ModelSerializer):
+    town=TownSerializer(many=True)
+    city=CitySerializer(many=True)
     class Meta:
-        model=Town
-        fields='__all__'
+        model=State
+        fields=['state','description','population','gdp','city','town']
+
+class CountrySerializer(ModelSerializer):
+    states=StateSerializer(many=True)
+    class Meta:
+        model=Country
+        fields=['country', 'description', 'population','gdp','states']
+
+
+
