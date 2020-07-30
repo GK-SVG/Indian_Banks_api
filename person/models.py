@@ -2,7 +2,7 @@ from django.db import models
 
     
 class Country(models.Model):
-    country=models.CharField(max_length=50)
+    country=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
     gdp=models.FloatField()
@@ -13,7 +13,7 @@ class Country(models.Model):
 
 class State(models.Model):
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
-    state=models.CharField(max_length=50)
+    state=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
     gdp=models.FloatField()
@@ -24,7 +24,7 @@ class State(models.Model):
 class City(models.Model):
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
     state=models.ForeignKey(State,on_delete=models.CASCADE)
-    city=models.CharField(max_length=50)
+    city=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
     gdp=models.FloatField()
@@ -35,7 +35,7 @@ class City(models.Model):
 class Town(models.Model):
     country=models.ForeignKey(Country,on_delete=models.CASCADE)
     state=models.ForeignKey(State,on_delete=models.CASCADE)
-    town=models.CharField(max_length=50)
+    town=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
     gdp=models.FloatField()
@@ -44,8 +44,10 @@ class Town(models.Model):
         return self.town
 
 class Person(models.Model):
-    county=models.CharField(max_length=50)
-
+    person_id=models.AutoField(primary_key=True)
+    name=models.CharField(max_length=100,default='')
+    county=models.ForeignKey(Country,default='',on_delete=models.CASCADE)
+    state=models.ForeignKey(State,default='',on_delete=models.CASCADE)
     def __str__(self):
-        return self.id
+        return self.name
     
