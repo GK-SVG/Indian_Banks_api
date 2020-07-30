@@ -18,7 +18,7 @@ from rest_framework import filters
 
 
 class PersonListAPIView(ListAPIView):
-    search_fields = ['id','name','country','state']
+    search_fields = ['person_id']
     filter_backends = (filters.SearchFilter,)
     queryset=Person.objects.all()
     serializer_class=PersonSerializer
@@ -38,7 +38,7 @@ class PersonUpdateAPIView(UpdateAPIView):
     lookup_field='id'
 
 class CountryListAPIView(ListAPIView):
-    search_fields = ['id','country']
+    search_fields = ['country']
     filter_backends = (filters.SearchFilter,)
     queryset=Country.objects.all()
     serializer_class=CountrySerializer
@@ -58,7 +58,7 @@ class CountryUpdateAPIView(UpdateAPIView):
     lookup_field='id'
 
 class StateListAPIView(ListAPIView):
-    search_fields = ['id','country','state']
+    search_fields = ['state']
     filter_backends = (filters.SearchFilter,)
     queryset=State.objects.all()
     serializer_class=StateSerializer
@@ -78,7 +78,7 @@ class StateUpdateAPIView(UpdateAPIView):
     lookup_field='id'
 
 class CityListAPIView(ListAPIView):
-    search_fields = ['id','country','state','city']
+    search_fields = ['city']
     filter_backends = (filters.SearchFilter,)
     queryset=City.objects.all()
     serializer_class=CitySerializer
@@ -98,7 +98,7 @@ class CityUpdateAPIView(UpdateAPIView):
     lookup_field='id'
 
 class TownListAPIView(ListAPIView):
-    search_fields = ['id','country','state','town']
+    search_fields = ['town']
     filter_backends = (filters.SearchFilter,)
     queryset=Town.objects.all()
     serializer_class=TownSerializer
