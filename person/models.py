@@ -12,7 +12,7 @@ class Country(models.Model):
     
 
 class State(models.Model):
-    country=models.ForeignKey(Country,on_delete=models.CASCADE)
+    country=models.ForeignKey(Country,related_name='states',on_delete=models.CASCADE)
     state=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
@@ -22,8 +22,8 @@ class State(models.Model):
         return self.state
 
 class City(models.Model):
-    country=models.ForeignKey(Country,on_delete=models.CASCADE)
-    state=models.ForeignKey(State,on_delete=models.CASCADE)
+    country=models.ForeignKey(Country,related_name='city',on_delete=models.CASCADE)
+    state=models.ForeignKey(State,related_name='city',on_delete=models.CASCADE)
     city=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
@@ -33,8 +33,8 @@ class City(models.Model):
         return self.city
 
 class Town(models.Model):
-    country=models.ForeignKey(Country,on_delete=models.CASCADE)
-    state=models.ForeignKey(State,on_delete=models.CASCADE)
+    country=models.ForeignKey(Country,related_name='town',on_delete=models.CASCADE)
+    state=models.ForeignKey(State,related_name='town',on_delete=models.CASCADE)
     town=models.CharField(max_length=50,unique=True)
     description=models.TextField(max_length=300)
     population=models.IntegerField()
